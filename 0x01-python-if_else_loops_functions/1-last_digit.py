@@ -8,4 +8,4 @@ elif x == 0:
     m = "and is 0"
 else:
     m = "and is less than 6 and not 0"
-print(f"Last digit of {number} is {x:d} and {m}")
+print(f"Last digit of {number} is {x:d} {m}")
