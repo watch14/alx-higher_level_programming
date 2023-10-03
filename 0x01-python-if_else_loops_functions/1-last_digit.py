@@ -2,10 +2,10 @@
 import random
 number = random.randint(-10000, 10000)
 
-x = abs(number) % 10
+x = number % 10 if number > 10 else number % -10
 
 if x > 5:
-    m = "and is greater than "
+    m = "and is greater than 5"
 elif x == 0:
     m = "and is 0"
 else:
