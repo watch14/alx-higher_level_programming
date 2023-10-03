@@ -6,6 +6,6 @@ if x > 5:
     m = "and is greater than 5"
 elif x == 0:
     m = "and is 0"
-else:
+elif x < 6:
     m = "and is less than 6 and not 0"
 print(f"Last digit of {number} is {x:d} {m}")
