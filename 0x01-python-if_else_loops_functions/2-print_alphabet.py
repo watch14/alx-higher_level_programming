@@ -1,3 +1,3 @@
 #!/usr/bin/python3
 for al in range(97, 123):
-    print(f"{chr(al)}", end="")
+    print("{}".format(chr(al)), end="")
