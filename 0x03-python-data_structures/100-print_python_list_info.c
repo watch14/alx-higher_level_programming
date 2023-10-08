@@ -11,7 +11,7 @@
 void print_python_list_info(PyObject *p)
 {
 	int memory, size, i;
-	pyObject *pobj;
+	PyObject *pobj;
 
 	memory = ((PyListObject *)(p))->allocated;
 	size = Py_SIZE(p);
