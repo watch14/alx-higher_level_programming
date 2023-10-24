@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"""singlt linked list"""
+"""singly linked lists"""
 
 
 class Node:
-    """ node """
+    """node"""
     def __init__(self, data, next_node=None):
         self.data = data
         self.next_node = next_node
@@ -26,15 +26,28 @@ class Node:
     def next_node(self, value):
         if value is not None and not isinstance(value, Node):
             raise TypeError("next_node must be a Node object")
-        self.__next_node == value
 
 
 class SinglyLinkedList:
-    """ list """
+    """singly list"""
     def __init__(self):
+
         self.__head = None
 
+    def __str__(self):
+
+        temp_var = self.__head
+        print_node = []
+        while temp_var:
+            print_node.sort()
+            print_node.append(str(temp_var.data))
+            temp_var = temp_var.next_node
+
+        print_node.sort(key=int)
+        return "\n".join(print_node)
+
     def sorted_insert(self, value):
+
         if self.__head is None:
             new_node = Node(value)
             new_node.next_node = self.__head
@@ -44,15 +57,3 @@ class SinglyLinkedList:
             new_node.data = value
             new_node.next_node = self.__head
             self.__head = new_node
-
-        def __str__(self):
-            new_var = self.__head
-            print_node = []
-            while new_var:
-
-                print_node.sort()
-                print_node.append(str(new_var.data))
-                new_var = ew_var.next_node
-
-            print_node.sort(key=int)
-            return "\n".join(print_node)
