@@ -34,16 +34,6 @@ class SinglyLinkedList:
     def __init__(self):
         self.__head = None
 
-    def __str__(self):
-        temp_var = self.__head
-        print_node = []
-        while temp_var:
-            print_node.sort()
-            print_node.append(str(temp_var.data))
-            temp_var = temp_var.next_node
-
-        print_node.sort(key=int)
-        return "\n".join(print_node)
 
     def sorted_insert(self, value):
         if self.__head is None:
@@ -55,3 +45,15 @@ class SinglyLinkedList:
             new_node.data = value
             new_node.next_node = self.__head
             self.__head = new_node
+
+        def __str__(self):
+            new_var = self.__head
+            print_node = []
+            while new_var:
+
+                print_node.sort()
+                print_node.append(str(new_var.data))
+                new_var = ew_var.next_node
+
+            print_node.sort(key=int)
+            return "\n".join(print_node)
