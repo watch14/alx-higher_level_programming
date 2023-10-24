@@ -3,13 +3,14 @@
 
 
 class Square:
+    """Squares"""
     def __init__(self, size=0, position=(0, 0)):
         self.__size = size
         self.__position = position
 
     @property
     def size(self):
-        return self.__size
+        return self.__sizei
 
     @size.setter
     def size(self, value):
@@ -21,7 +22,7 @@ class Square:
 
     @property
     def position(self):
-        return self.__position
+        return self.position
 
     @position.setter
     def position(self, value):
@@ -39,8 +40,7 @@ class Square:
         if self.size == 0:
             print()
         else:
-            for _ in range(self.position[1]):
-                print(" ")
-            for _ in range(self.size):
+            print(" " * self.position[1])
+            for i in range(self.size):
                 print(" " * self.position[0])
                 print("#" * self.size)
