@@ -50,5 +50,8 @@ class Square:
             return square_str
         else:
             square_str += '\n' * self.__position[1]
-            square_str += '\n'.join(" " * self.__position[0] + "#" * self.__size for _ in range(self.__size))
+            square_str += '\n'.join(
+                    " " * self.__position[0] + "#" * self.__size
+                    for _ in range(self.__size)
+                    )
             return square_str
