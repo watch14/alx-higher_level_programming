@@ -22,7 +22,7 @@ class Square:
 
     @property
     def position(self):
-        return self.position
+        return self.__position
 
     @position.setter
     def position(self, value):
