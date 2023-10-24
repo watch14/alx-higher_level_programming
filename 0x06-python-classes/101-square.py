@@ -1,56 +1,54 @@
 #!/usr/bin/python3
-"""list"""
+"""saureas"""
 
 
-class Node:
-    """node for list"""
-    def __init__(self, data, next_node=None):
-        self.data = data
-        self.next_node = next_node
+class Square:
+    """saqures"""
+    def __init__(self, size=0, position=(0, 0)):
+        self.size = size
+        self.position = position
 
     @property
-    def data(self):
-        return self.__data
+    def size(self):
+        return self.__size
 
-    @data.setter
-    def data(self, value):
+    @size.setter
+    def size(self, value):
         if not isinstance(value, int):
-            raise TypeError("data must be an integer")
-        self.__data = value
+            raise TypeError("size must be an integer")
+        if value < 0:
+            raise ValueError("size must be >= 0")
+        self.__size = value
 
     @property
-    def next_node(self):
-        return self.__next_node
+    def position(self):
+        return self.__position
 
-    @next_node.setter
-    def next_node(self, value):
-        if value is not None and not isinstance(value, Node):
-            raise TypeError("next_node must be a Node object")
+    @position.setter
+    def position(self, value):
+        if (not isinstance(value, tuple) or len(value) != 2 or
+                not all(isinstance(x, int) for x in value) or
+                any(x < 0 for x in value)):
+            raise TypeError("position must be a tuple of 2 positive integers")
+        self.__position = value
 
-class SinglyLinkedList:
-    """single list"""
-    def __init__(self):
-        self.__head = None
+    def area(self):
+        return self.__size * self.__size
+
+    def my_print(self):
+        if self.__size == 0:
+            print()
+        else:
+            for i in range(self.__position[1]):
+                print()
+            for i in range(self.__size):
+                print(" " * self.__position[0] + "#" * self.__size)
 
     def __str__(self):
-        temp_var = self.__head
-        print_node = []
-        while temp_var:
-            print_node.sort()
-            print_node.append(str(temp_var.data))
-            temp_var = temp_var.next_node
-
-        print_node.sort(key=int)
-        return "\n".join(print_node)
-
-    def sorted_insert(self, value):
-        if self.__head is None:
-            new_node = Node(value)
-            new_node.next_node = self.__head
-            self.__head = new_node
+        square_str = ""
+        if self.__size == 0:
+            return square_str
         else:
-            new_node = Node(value)
-            new_node.data = value
-            new_node.next_node = self.__head
-            self.__head = new_node
-
+            square_str += '\n' * self.__position[1]
+            square_str += '\n'.join(" " * self.__position[0] + "#" * self.__size for _ in range(self.__size))
+            return square_str

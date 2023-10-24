@@ -27,6 +27,7 @@ class Node:
         if value is not None and not isinstance(value, Node):
             raise TypeError("next_node must be a Node object")
 
+
 class SinglyLinkedList:
     """single list"""
     def __init__(self):
