@@ -3,6 +3,7 @@
 
 
 class Node:
+    """ node """
     def __init__(self, data, next_node=None):
         self.data = data
         self.next_node = next_node
@@ -28,6 +29,7 @@ class Node:
 
 
 class SinglyLinkedList:
+    """ list """
     def __init__(self):
         self.__head = None
 
