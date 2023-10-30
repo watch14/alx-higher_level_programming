@@ -44,7 +44,6 @@ class Rectangle:
         r = ""
         if self.width is 0 or self.height is 0:
             return r
-            
         for i in range(self.height):
             r += "#" * self.width + "\n"
         return r
