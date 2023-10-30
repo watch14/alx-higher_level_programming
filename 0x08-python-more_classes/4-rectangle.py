@@ -51,4 +51,4 @@ class Rectangle:
         return total
 
     def __repr__(self):
-        return f"rectangle({self.width}, {self.height})"
+        return f"Rectangle({self.width}, {self.height})"
