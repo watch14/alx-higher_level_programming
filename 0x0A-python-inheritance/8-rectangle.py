@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""rectangle"""
+"""
+rectangle
+"""
 BaseGeometry = ___import___('7-base_geometry').BaseGeometry
 
 
