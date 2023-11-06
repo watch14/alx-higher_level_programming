@@ -7,3 +7,6 @@ class Square(Rectangle):
     """Square"""
     def __init__(self, size):
         super().__init__(size, size)
+
+    def area():
+        return self.__width * self.__height
