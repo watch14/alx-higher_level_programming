@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""Rectangle inheret geo"""
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
+"""Rectangle inheret geo"""
 
 
 class Rectangle(BaseGeometry):
@@ -12,7 +12,9 @@ class Rectangle(BaseGeometry):
         self.__height = height
 
     def area():
+        """area"""
         return self.__width * self.__height
 
     def __str__(self):
+        """retunr string"""
         return f"[Rectangle] {self.__width}/{self.__height}"
