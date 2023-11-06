@@ -4,4 +4,4 @@
 
 def is_kind_of_class(obj, a_class):
     """is kinf of class"""
-    return isinstance(a_class, obj)
+    return isinstance(obj, a_class)
