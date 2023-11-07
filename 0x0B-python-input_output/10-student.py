@@ -10,6 +10,7 @@ class Student:
         self.age = age
 
     def to_json(self, attrs=None):
+        """to json"""
         try:
             for at in attrs:
                 if type(at) in not str:
