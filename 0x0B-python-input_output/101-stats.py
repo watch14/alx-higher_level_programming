@@ -1,20 +1,20 @@
 #!/usr/bin/python3
-"""stdin"""
+"""stats"""
+from sys import stdin
 
-import sys
 
-def print_stats(file_size, status_counts):
-    """Print statistics"""
-    print("File size: {}".format(file_size))
-    for status_code in sorted(status_counts.keys()):
-        if status_counts[status_code] > 0:
-            print("{}: {}".format(status_code, status_counts[status_code])
+def print_stats(size, cnt):
+    """stdin"""
+    print("File size: {}".format(size))
+    for status_code in sorted(cnt.keys()):
+        if cnt[status_code] > 0:
+            print("{}: {}".format(status_code, cnt[status_code]))
 
 def main():
     try:
-        line_number = 0
-        total_file_size = 0
-        status_counts = {
+        line = 0
+        size = 0
+        cnt = {
             200: 0,
             301: 0,
             400: 0,
@@ -25,21 +25,17 @@ def main():
             500: 0,
         }
 
-        for line in sys.stdin:
-            line_number += 1
-            parts = line.split()
+        for data in sys.stdin:
+            line += 1
+            parts = data.split()
             if len(parts) >= 7:
                 status_code = int(parts[-2])
                 file_size = int(parts[-1])
-                total_file_size += file_size
-                if status_code in status_counts:
-                    status_counts[status_code] += 1
-
-            if line_number % 10 == 0:
-                print_stats(total_file_size, status_counts)
-
+                size += file_size
+                if status_code in cnt:
+                    cnt[status_code] += 1
+            if line % 10 == 0:
+                print_stats(size, cnt)
     except KeyboardInterrupt:
-        print_stats(total_file_size, status_counts)
+        print_stats(size, cnt)
 
-if __name__ == "__main__":
-    main()
