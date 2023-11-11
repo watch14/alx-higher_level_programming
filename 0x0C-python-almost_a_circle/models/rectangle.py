@@ -53,7 +53,7 @@ class Rectangle(Base):
         self.__y = value
 
     def raiser(self, name, value, ifeq=True):
-        """raise errors"""
+        """the raiser"""
         if not isinstance(value, int):
             raise TypeError(f"{name} must be an integer")
         if ifeq and value <= 0:
@@ -69,3 +69,7 @@ class Rectangle(Base):
         """ display with #"""
         for i in range(self.height):
             print("#" * self.width)
+
+    def __str__(self):
+        return f"[{type(self).__name__}] ({self.id}) "\
+                f"{self.x}/{self.y} - {self.width}/{self.height}"
