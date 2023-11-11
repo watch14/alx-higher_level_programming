@@ -60,4 +60,3 @@ class Rectangle(Base):
             raise ValueError(f"{name} must be > 0")
         elif not ifeq and value < 0:
             raise ValueError(f"{name} must be => 0")
-
