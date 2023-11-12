@@ -73,11 +73,10 @@ class Rectangle(Base):
             print(" " * self.x + "#" * self.width)
 
     def __str__(self):
-        """str"""
-        return ("[Rectangle] ({}) {:d}/{:d} - {:d}/{:d}".
-                format(
-                    self.id, self.__x, self.__y, self.__width, self.__height
-                    ))
+        '''Returns string info about this rectangle.'''
+        return '[{}] ({}) {}/{} - {}/{}'.format(
+                type(self)
+                .__name__, self.id, self.x, self.y, self.width, self.height)
 
     def update(self, *args, **kwargs):
         """update"""
