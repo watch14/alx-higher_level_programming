@@ -30,3 +30,10 @@ class Base:
             list_objs = [k.to_dictionary() for k in list_objs]
         with open("{}.json".format(cls.__name__), "w", encoding="utf-8") as f:
             f.write(cls.to_json_string(list_objs))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """list of JSON"""
+        if json_string is None or not json_string:
+            return []
+        return json.loads(json_string)
