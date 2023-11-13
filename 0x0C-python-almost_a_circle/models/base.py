@@ -103,6 +103,7 @@ class Base:
 
     @staticmethod
     def draw(list_rectangles, list_squares):
+        """turtle draw"""
         import turtle
         import time
         from random import randrange
