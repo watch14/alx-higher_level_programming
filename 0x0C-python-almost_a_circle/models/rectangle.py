@@ -78,8 +78,8 @@ class Rectangle(Base):
                 type(self)
                 .__name__, self.id, self.x, self.y, self.width, self.height)
 
-    def update(self, *args, **kwargs):
-        """update"""
+        def update(self, *args, **kwargs):
+            """update"""
         if args is not None and len(args) is not 0:
             attr = ['id', 'width', 'height', 'x', 'y']
             for i in range(len(args)):
