@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""rectangle"""
+"""rectangle class with size and inhereting from base"""
 from models.base import Base
 
 
