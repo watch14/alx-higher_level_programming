@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 #!/usr/bin/python3
 """Base """
+=======
+"""Base"""
+#!/usr/bin/python3
+>>>>>>> 1be9ffd441f7568cc0ac07455663d9ec7fcb990e
 import json
 import csv
 
