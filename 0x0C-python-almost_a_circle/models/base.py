@@ -1,5 +1,5 @@
-#!/usr/bin/python3
 """Base"""
+#!/usr/bin/python3
 import json
 import csv
 
