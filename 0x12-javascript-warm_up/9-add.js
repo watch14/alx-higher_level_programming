@@ -1,13 +1,12 @@
 #!/usr/bin/node
 
-const i = process.argv[2];
-const y = process.argv[3];
-
-if (typeof i === 'undefined' || typeof y === 'undefined') {
-  console.log('NaN');
-} else if (isNaN(i) || isNaN(y)) {
-  console.log('NaN');
-} else {
-  const o = Number(i) + Number(y);
-  console.log(o);
+function add(a, b) {
+  return parseInt(a) + parseInt(b);
 }
+
+const num1 = process.argv[2];
+const num2 = process.argv[3];
+
+const result = add(num1, num2);
+
+console.log(result || 'NaN');
