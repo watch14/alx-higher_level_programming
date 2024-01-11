@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+""" import form table """
 import sys
 import MySQLdb
 
