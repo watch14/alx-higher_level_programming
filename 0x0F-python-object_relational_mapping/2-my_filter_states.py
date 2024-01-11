@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" start with N """
+""" search """
 import sys
 import MySQLdb
 
