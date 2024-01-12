@@ -1,33 +1,29 @@
 #!/usr/bin/python3
-"""Script to list cities from a MySQL database based on a state"""
+""" sql """
 import sys
 import MySQLdb
 
-
-if __name__ == "__main__":
-    """Main execution block"""
+if __name__ == '__main__':
     db = MySQLdb.connect(
+            host='localhost',
             user=sys.argv[1],
-            passwd=sys.argv[2],
+            password=sys.argv[2],
             db=sys.argv[3],
-            host="localhost",
             port=3306
             )
 
-    cursor = db.cursor()
+    cur = db.cursor()
 
-    query = """
-        SELECT cities.name FROM cities
+    query = """SELECT cities.name FROM cities
         JOIN states ON cities.state_id = states.id
-        WHERE states.name = %s
-        ORDER BY cities.id ASC
-    """
+        WHERE states.name = %s ORDER BY cities.id ASC"""
 
-    cursor.execute(query, (sys.argv[4],))
+    cur.execute(query, (sys.argv[4],))
 
-    rows = cursor.fetchall()
+    rows = cur.fetchall()
 
-    print(", ".join([city[0] for city in rows]))
+    for row in rows:
+        print(", ".join(row))
 
-    cursor.close()
+    cur.close()
     db.close()
