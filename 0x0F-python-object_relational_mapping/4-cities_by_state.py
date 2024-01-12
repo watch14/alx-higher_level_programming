@@ -15,7 +15,7 @@ if __name__ == '__main__':
 
     cur = db.cursor()
 
-    cursor.execute("SELECT cities.id, cities.name, states.name FROM cities \
+    cur.execute("SELECT cities.id, cities.name, states.name FROM cities \
             JOIN states ON cities.state_id = states.id \
             ORDER BY cities.id ASC")
 
