@@ -19,7 +19,7 @@ if __name__ == '__main__':
             WHERE name = '{}' \
             ORDER BY id ASC""".format(sys.argv[4])
     
-    cur.execute("sq")
+    cur.execute(sq)
     
     rows = cur.fetchall()
 
