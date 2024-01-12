@@ -14,10 +14,10 @@ if __name__ == '__main__':
             )
 
     cur = db.cursor()
-    
-    sq = """SELECT * FROM states \
-            WHERE name = '{}' \
-            ORDER BY id ASC""".format(sys.argv[4])
+   
+   sq = """
+    SELECT * FROM states WHERE name LIKE BINARY '{}' ORDER BY id ASC
+    """.format(sys.argv[4])
     
     cur.execute(sq)
     
