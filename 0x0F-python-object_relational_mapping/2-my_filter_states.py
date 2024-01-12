@@ -15,9 +15,9 @@ if __name__ == '__main__':
 
     cur = db.cursor()
     
-    sq = "SELECT * FROM states \
+    sq = """SELECT * FROM states \
             WHERE name = '{}' \
-            ORDER BY id ASC".format(sys.argv[4])
+            ORDER BY id ASC""".format(sys.argv[4])
     
     cur.execute("sq")
     
