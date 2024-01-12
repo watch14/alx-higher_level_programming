@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" start with N """
+""" sql """
 import sys
 import MySQLdb
 
@@ -23,7 +23,7 @@ if __name__ == '__main__':
     rows = cur.fetchall()
 
     for row in rows:
-        print(row)
+        print(", ".join(row))
 
     cur.close()
     db.close()
