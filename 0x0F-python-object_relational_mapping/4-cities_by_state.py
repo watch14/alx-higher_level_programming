@@ -15,9 +15,11 @@ if __name__ == "__main__":
             )
 
     cur = db.cursor()
-    cur.execute("SELECT cities.id, cities.name, states.name FROM cities \
-            JOIN states ON cities.state_id = states.id \
-            ORDER BY cities.id ASC")
+
+    sql = """SELECT c.id, c.name, s.name FROM states s, cities c
+          WHERE c.state_id = s.id ORDER BY c.id ASC"""
+
+    cur.execute(sql)
 
     rows = cur.fetchall()
 
