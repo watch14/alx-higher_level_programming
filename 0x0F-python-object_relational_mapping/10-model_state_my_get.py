@@ -16,9 +16,8 @@ if __name__ == "__main__":
 
     state = (
             session.query(State)
-            .filter(State.name.like("sys.argv[4]"))
-            .order_by(State.id)
-            .all()
+            .filter(State.name == sys.argv[4])
+            .first()
             )
 
     if state:
