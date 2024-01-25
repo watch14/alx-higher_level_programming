@@ -1,3 +1,3 @@
 #!/bin/bash
-# curl a json file
-curl -s -X POST -H "Content-Type: application/json" --data-binary "@$filename" "$url"
+# cURL a JSON file
+curl -sH "Content-Type: application/json" -d @"$2" -X POST "$1"
