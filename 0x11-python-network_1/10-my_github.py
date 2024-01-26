@@ -2,11 +2,10 @@
 """ REQUESTS - github API """
 import requests
 import sys
-from requests.auth import HTTPBasicAuth
 
 if __name__ == "__main__":
     url = "https://github.com/user"
-    auth = HTTPBasicAuth(sys.argv[1], sys.argv[2])
+    auth = (sys.argv[1], sys.argv[2])
     res = requests.get(url, auth=auth)
 
     data = res.json()
