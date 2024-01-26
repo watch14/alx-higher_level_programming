@@ -11,5 +11,5 @@ if __name__ == "__main__":
     data = req.json()
 
     for com in data:
-        print(f"{com.get('sha')}: {\
-                com.get('commit').get('author').get('name')}")
+        name = com['commit']['author']['name']
+        print(f"{com.get('sha')}: {com}")
