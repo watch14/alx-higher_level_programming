@@ -10,6 +10,6 @@ if __name__ == "__main__":
     r = requests.get(url, auth=auth)
     data = r.json()
     if data:
-        print(data.get("id"))
+        print(data["id"])
     else:
         print('None')
