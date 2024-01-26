@@ -7,11 +7,11 @@ from requests.auth import HTTPBasicAuth
 if __name__ == "__main__":
     url = "https://github.com/user"
     auth = HTTPBasicAuth(sys.argv[1], sys.argv[2])
-    r = requests.get(url, auth=auth)
+    res = requests.get(url, auth=auth)
 
     try:
-        data = r.json()
+        data = res.json()
         if data:
             print(data["id"])
-    except:
+    except res.status_code:
         print("None")
