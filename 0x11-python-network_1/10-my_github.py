@@ -9,9 +9,8 @@ if __name__ == "__main__":
     auth = HTTPBasicAuth(sys.argv[1], sys.argv[2])
     res = requests.get(url, auth=auth)
 
-    try:
-        data = res.json()
-        if data:
-            print(data["id"])
-    except:
+    data = res.json()
+    if data:
+        print(data["id"])
+    else:
         print("None")
