@@ -6,10 +6,13 @@ import sys
 if __name__ == "__main__":
     url = "https://github.com/user"
     auth = (sys.argv[1], sys.argv[2])
-    res = requests.get(url, auth=auth)
 
-    data = res.json()
-    if data:
+    try:
+        res = requests.get(url, auth=auth)
+        res.raise_for_status()
+        data = res.json()
+
         print(data["id"])
-    else:
+
+    except requests.exceptions.RequestException:
         print("None")
