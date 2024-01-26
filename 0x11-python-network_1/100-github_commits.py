@@ -1,7 +1,8 @@
 #!/usr/bin/python3
-""" REQUESTS - github API """
+""" REQUESTS - GitHub API """
 import requests
 import sys
+
 
 if __name__ == "__main__":
     user_repo = f"{sys.argv[2]}/{sys.argv[1]}"
@@ -12,4 +13,5 @@ if __name__ == "__main__":
 
     for com in data:
         name = com['commit']['author']['name']
-        print(f"{com.get('sha')}: {com}")
+        sha = com['sha']
+        print(f"{sha}: {name}")
