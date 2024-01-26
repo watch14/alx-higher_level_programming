@@ -13,5 +13,5 @@ if __name__ == "__main__":
         data = res.json()
         if data:
             print(data["id"])
-    except res.status_code:
+    except:
         print("None")
