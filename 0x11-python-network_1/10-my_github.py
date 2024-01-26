@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" """
+""" REQUESTS - github API """
 
 import requests
 from sys import argv
