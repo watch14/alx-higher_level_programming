@@ -2,21 +2,19 @@
 
 const request = require('request');
 
-const url = process.argv[2];
+const apiUrl = process.argv[2];
 
-request.get(url, (err, resp, body) => {
+request.get(apiUrl, (err, resp, body) => {
   if (err) {
-    console.error(err);
+    console.error('Error:', err);
   } else {
-    const film = JSON.parse(body).results;
-
-    const count = film.reduce((total, film) => {
+    const films = JSON.parse(body).results;
+    let count = 0;
+    films.forEach(film => {
       if (film.characters.includes('https://swapi-api.alx-tools.com/api/people/18/')) {
-        return total + 1;
+        count++;
       }
-      return total;
-    }, 0);
-
+    });
     console.log(count);
   }
 });
