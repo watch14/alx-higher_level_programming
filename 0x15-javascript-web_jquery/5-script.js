@@ -1,3 +1,4 @@
-$('DIV#add_item').click(function(){
-	
+/* globals $ */
+$('DIV#add_item').click(function () {
+  $('UL.my_list').append('<li>Item</li>');
 });
